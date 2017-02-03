@@ -1,0 +1,289 @@
+    1  clear
+    2  pwd
+    3  wget https://raw.githubusercontent.com/airavata-courses/TeamOmni/8db4870ac17b5d4a7aae17699fa5ab3ac589fafc/scripts/requirements/DockerInstall.sh
+    4  ls -lrt
+    5  chmod 777
+    6  chmod 777 DockerInstall.sh 
+    7  ls -lrt
+    8  ./DockerInstall.sh
+    9  ls -lrt
+   10  docker man
+   11  sudo docker
+   12  clear
+   13  sudo docker ps -a
+   14  clear
+   15  ls -lrt
+   16  history
+   17  docker run -d -v /var/run/docker.sock:/tmp/docker.sock --name registrator -h registrator gliderlabs/registrator:latest consul://127.0.0.1:8500
+   18  sudo docker run -d -v /var/run/docker.sock:/tmp/docker.sock --name registrator -h registrator gliderlabs/registrator:latest consul://127.0.0.1:8500
+   19  clear
+   20  sudo docker ps -a
+   21  clear
+   22  sudo docker ps -a
+   23  sudo docker run -d --name=registrator --net=host --volume=/var/run/docker.sock:/tmp/docker.sock gliderlabs/registrator:latest consul://localhost:8500
+   24  docker rm -f b0c0b7c57cd4
+   25  sudo docker rm -f b0c0b7c57cd4
+   26  sudo docker run -d --name=registrator --net=host --volume=/var/run/docker.sock:/tmp/docker.sock gliderlabs/registrator:latest consul://localhost:8500
+   27  sudo docker ps -a
+   28  sudo docker run -d -P --name node1 -h node1 jlordiales/python-micro-service:latest
+   29  sudo docker ps -a
+   30  curl
+   31  sudo apt-get install apt-transport-https                        ca-certificates
+   32  clear
+   33  curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -
+   34  apt-key fingerprint 58118E89F3A912897C070ADBF76221572C52609D
+   35  sudo add-apt-repository        "deb https://apt.dockerproject.org/repo/ \
+   36         ubuntu-$(lsb_release -cs) \
+   37         main"
+   38  sudo apt-get update
+   39  sudo apt-get -y install docker-engine
+   40  clear
+   41  sudo docker run hello-world
+   42  ls -lrt
+   43  clear
+   44  history
+   45  docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise $DOCKER_IP -bootstrap
+   46  sudo docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise $DOCKER_IP -bootstrap
+   47  clear
+   48  docker ps -a
+   49  sudo docker ps -a
+   50  clear
+   51  sudo docker ps -a
+   52  docker rm -f consul
+   53  sudo docker rm -f consul
+   54  sudo docker rm -f cocky_turing
+   55  clear
+   56  sudo docker ps -a
+   57  sudo docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise $DOCKER_IP -bootstrap
+   58  boot2docker ip
+   59  clear
+   60  docker ps -a
+   61  sudo docker ps -a
+   62  sudo docker rm -f consul
+   63  sudo docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise 127.0.0.1 -bootstrap
+   64  clear
+   65  docker ps -a
+   66  sudo docker ps -a
+   67  docker rm -f 9c9d9a0b6ba8
+   68  sudo docker rm -f 9c9d9a0b6ba8
+   69  clear
+   70  sudo docker ps -a
+   71  sudo docker kill db96c36c30d6
+   72  sudo docker kill e368eeeacd9b
+   73  sudo docker ps -a
+   74  sudo docker rm -f db96c36c30d6
+   75  sudo docker rm -f e368eeeacd9b
+   76  clear
+   77  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+   78  docker ps -a 
+   79  sudo docker ps -a
+   80  clear
+   81  sudo docker ps -a
+   82  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+   83  touch /var/log/sga-consul.log
+   84  sudo touch /var/log/sga-consul.log
+   85  sudo chmod 777 /var/log/sga-consul.log
+   86  clear
+   87  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+   88  tail -f /var/log/sga-consul.log
+   89  clear
+   90  sudo docker ps -a
+   91  sudo docker rm -f 66287e65f702
+   92  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+   93  tail -f /var/log/sga-consul.log
+   94  sudo docker run -d -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+   95  tail -f /var/log/sga-consul.log
+   96  clear
+   97  docker ps -a
+   98  sudo docker ps -a
+   99  sudo docker rm -f 59f0ba61d990
+  100  clear
+  101  sudo docker ps -a
+  102  sudo docker run -d -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+  103  tail -f /var/log/sga-consul.log
+  104  clear
+  105  sudo docker ps -a
+  106  history
+  107  clear
+  108  sudo docker ps -a
+  109  sudo docker rm -f ffc8b40accca
+  110  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+  111  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+  112  sudo docker ps -a
+  113  sudo docker rm -f 53561d971757
+  114  free -m
+  115  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+  116  clear
+  117  sudo docker ps -a
+  118  sudo docker rm -f b9a644fc9a68
+  119  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8300:8300 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+  120  sudo docker ps -a
+  121  sudo docker rm -f 0016f7bf5347
+  122  sudo docker run -d -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8300:8300 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+  123  sudo docker ps -a
+  124  sudo docker rm -f 9e66d7e46c51
+  125  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8300:8300 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+  126  sudo docker ps -a
+  127  sudo docker rm -f c9f79bd576bd
+  128  sudo docker run -p 8400:8400 -p 8500:8500 -p 8301:8301 -p 8300:8300 -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+  129  clear
+  130  sud docker ps -a
+  131  sudo docker ps -a
+  132  sudo docker rm -f ffc88746609b
+  133  clear
+  134  sudo docker ps -a
+  135  sudo docker run -d -p 8400:8400 -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8301:8301/udp -p 8302:8302 -p 8302:8302/udp -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+  136  sudo docker ps -a
+  137  sudo docker rm -f a1744007f6f8
+  138  clear
+  139  sudo docker run -p 8400:8400 -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8301:8301/udp -p 8302:8302 -p 8302:8302/udp -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap
+  140  clear
+  141  docker ps -a
+  142  sudo docekr ps -a
+  143  sudo docker ps -a
+  144  sudo docker rm -f 3459e12065e7
+  145  sudo docker ps -a
+  146  sudo docker run -d -p 8400:8400 -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8301:8301/udp -p 8302:8302 -p 8302:8302/udp -p 8600:53/udp -h consul --name consul progrium/consul -server -advertise `wget -qO- http://instance-data/latest/meta-data/public-ipv4` -bootstrap >> /var/log/sga-consul.log 2>&1
+  147  clear
+  148  docker ps -a
+  149  clear
+  150  sudo docker ps -a
+  151  clear
+  152  sudo docker run -p 8089:80 -p 443:443 -d eboraas/laravel
+  153  sudo docker ps -a
+  154  clear
+  155  vim Dockerfile
+  156  chmod 777 Docker
+  157  chmod 777 Dockerfile 
+  158  ls -lrt
+  159  sudo docker build --no-cache --build-arg -t sga/laravel:v1 .
+  160  sudo docker build --no-cache -t sga/laravel:v1 .
+  161  sudo docker ps -a
+  162  sudo docker rm -f 58c4ff43f163
+  163  clear
+  164  sudo docker build --no-cache -t sga/laravel:v1 .
+  165  sudo docker ps -a
+  166  clear
+  167  ls -lrt
+  168  vim Dockerfile
+  169  sudo docker ps -a
+  170  sudo docker build --no-cache -t sga/laravel:v1 .
+  171  clear
+  172  sudo docker ps -a
+  173  sudo docker run -it --name laravelApp -h sga.portal -p 8089:80 -d sga/laravel:v1
+  174  sudo docker ps -a
+  175  clear
+  176  mkdir laravel-portal
+  177  cd laravel-portal/
+  178  git clone https://github.com/airavata-courses/spring17-laravel-portal.git
+  179  ls -lrt
+  180  cd spring17-laravel-portal/
+  181  git checkout develop
+  182  clear
+  183  git status
+  184  ls -lrt
+  185  cd config/
+  186  ls -lrt
+  187  vim cache.php 
+  188  clear
+  189  cd ../
+  190  sudo docker ps -a
+  191  sudo docker rm -f d5aac8cfaa42
+  192  clear
+  193  cd ../
+  194  pwd
+  195  sudo docker ps -a
+  196  sudo docker run -it --name laravelApp -v /home/ubuntu/laravel-portal/spring17-laravel-portal/:/var/www/laravel/ -h sga.portal -p 8089:80 -d sga/laravel:v1
+  197  sudo docker ps -a
+  198  clear
+  199  sudo docker ps -a
+  200  sudo docker rm -f 8fef157494ca
+  201  sudo docker ps -a
+  202  clear
+  203  sudo docker build --no-cache --build-arg -t sga/laravel:v1 .
+  204  sudo docker build --no-cache -t sga/laravel:v1 .
+  205  cd ../
+  206  ls -lrt
+  207  sudo docker build --no-cache -t sga/laravel:v1 .
+  208  sudo docker run -it --name laravelApp -v /home/ubuntu/laravel-portal/spring17-laravel-portal/resources/:/var/www/laravel/resources/ -h sga.portal -p 8089:80 -d sga/laravel:v1
+  209  sudo docker ps -a
+  210  ls -al
+  211  cd ..
+  212  ls
+  213  cd ubuntu/laravel-portal/
+  214  ls
+  215  cd spring17-laravel-portal/
+  216  ls
+  217  cd resources/
+  218  l
+  219  sl
+  220  ls
+  221  cd views/
+  222  ls
+  223  nano welcome.blade.php 
+  224  cat welcome.blade.php 
+  225  cd -
+  226  cd ../../
+  227  cd ../
+  228  ls -lrt
+  229  cd laravel-portal/spring17-laravel-portal/
+  230  cd -
+  231  clear
+  232  ls -lrt
+  233  vim Dockerfile 
+  234  history
+  235  clear
+  236  ls -lrt
+  237  sudo docker ps -a
+  238  sudo docker rm -f 2f1cde89db98
+  239  vim Dockerfile
+  240  sudo docker build --no-cache --build-arg -t sga/laravel:v1 .
+  241  clear
+  242  vim Dockerfile 
+  243  clear
+  244  sudo docker build --no-cache --build-arg -t sga/laravel:v1 .
+  245  clear
+  246  vim Dockerfile 
+  247  sudo docker build --no-cache -t sga/laravel:v1 .
+  248  clear
+  249  vim Dockerfile 
+  250  sudo docker build --no-cache -t sga/laravel:v1 .
+  251  vim Dockerfile 
+  252  sudo docker build --no-cache -t sga/laravel:v1 .
+  253  vim Dockerfile 
+  254  sudo docker build --no-cache -t sga/laravel:v1 .
+  255  vim Dockerfile 
+  256  sudo docker ps -a
+  257  docker exec 8700967fd218 -ls ..
+  258  docker exec -it 8700967fd218 -ls ./..
+  259  docker exec -it 8700967fd218 -ls .
+  260  clear
+  261  free -m
+  262  sudo docker ps -a
+  263  sudo docker rm -f 3ec3c2fd1a34 d3166b0613af aff62b09fe93 01fe08c6ce75 6f873c0e449f 8700967fd218
+  264  clear
+  265  sudo docker ps -a
+  266  vim Dockerfile 
+  267  clear
+  268  sudo docker build --no-cache -t sga/laravel:v1 .
+  269  docker ps -a
+  270  clear
+  271  sudo docker run -it --name laravelApp -v /home/ubuntu/laravel-portal/spring17-laravel-portal/:/var/www/laravel/ -h sga.portal -p 8089:80 -d sga/laravel:v1
+  272  sudo docker ps -a
+  273  sudo docker exec abff49498a71 ls
+  274  sudo docker exec abff49498a71 pwd
+  275  sudo docker exec abff49498a71 pwd /var/www/
+  276  sudo docker exec abff49498a71 pwd /var/www
+  277  sudo docker exec abff49498a71 ls /var/www
+  278  sudo docker exec abff49498a71 ls /var/www/laravel
+  279  sudo docker exec abff49498a71 ls /var/www/laravel/config
+  280  clear
+  281  vim Dockerfile
+  282  history
+  283  ls -lrt
+  284  git clone https://github.com/airavata-courses/spring17-devops.git
+  285  ls -lrt
+  286  cd spring17-devops/
+  287  cp ../Dockerfile .
+  288  touch history.txt
+  289  history >> history.txt
