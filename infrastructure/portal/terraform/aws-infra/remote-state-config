@@ -1,0 +1,5 @@
+terraform remote config \
+    -backend=s3 \
+    -backend-config="bucket=spring17-api-terraform-state" \
+    -backend-config="key=portal/terraform.tfstate" \
+    -backend-config="region=us-east-2"
