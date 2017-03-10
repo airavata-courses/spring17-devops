@@ -1,0 +1,5 @@
+terraform remote config \
+    -backend=s3 \
+    -backend-config="bucket=jenkins-terraform-state-os" \
+    -backend-config="key=jenkins-os-state/terraform.tfstate" \
+    -backend-config="region=us-east-2"

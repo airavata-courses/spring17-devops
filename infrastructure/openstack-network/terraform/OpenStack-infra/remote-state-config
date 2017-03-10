@@ -1,0 +1,5 @@
+terraform remote config \
+    -backend=s3 \
+    -backend-config="bucket=spring17-openstack-network-terraform-state" \
+    -backend-config="key=keycloak-os-state/terraform.tfstate" \
+    -backend-config="region=us-east-2"
