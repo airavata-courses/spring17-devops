@@ -1,0 +1,35 @@
+---
+# roles/deploy/tasks/main.yml
+
+- name: Install git
+  apt:
+    pkg: git
+    state: present
+  sudo: yes
+
+- name: install Docker
+    apt:
+      pkg: docker
+      state: present
+    sudo: yes
+
+- name: install Docker engine
+    apt:
+      pkg: docker-engine
+      state: present
+    sudo: yes
+
+- name: Install shell script
+  copy:
+    src: upstart.conf
+    dest: /etc/upstart/webapp.conf
+  sudo: yes
+  
+- name: Transfer and execute the shell script.
+  sudo: yes
+  tasks:
+     - name: Transfer the script
+       copy: src=codeDeployBeforeInstall.sh dest=/usr/local/bin mode=0777
+
+     - name: Execute the script
+       command: sh /usr/local/bin/codeDeployBeforeInstall.sh

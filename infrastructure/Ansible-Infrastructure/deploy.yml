@@ -1,0 +1,45 @@
+---
+# deploy.yml
+
+- name: Find existing instance(s)
+  hosts: "AIRAVATA_API_SERVER"
+  gather_facts: false
+  tags: find
+  tasks:
+    - name: Add to old-ami-build group
+      group_by:
+        key: old-ami-build
+
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - role: launch
+      name: ami-build
+
+- hosts: ami-build
+  roles:
+    - deploy
+
+
+- hosts: ami-build
+  connection: local
+  gather_facts: no
+  roles:
+    - build-ami
+    - create-launch-configuration
+    - auto-scaling
+
+
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - delete-old-launch-configurations
+    - delete-old-amis
+
+- hosts: old-ami-build
+  connection: local
+  gather_facts: no
+  roles:
+    - terminate
