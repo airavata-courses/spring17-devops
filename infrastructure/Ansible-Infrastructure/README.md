@@ -1,5 +1,6 @@
 #Evaluating Ansible to provision infrastructure for Airavata.
 
+This playbook is based on https://github.com/atplanet/ansible-auto-scaling-tutorial.
 
 
 ## Setting up Ansible
@@ -590,8 +591,4 @@ if __name__ == '__main__':
 When these roles are used together, Ansible will maintain a history of 10 AMIs and 10 Launch Configurations prior to the latest one of each. This will provide our rollback capability; in the event that you wish to roll back to an earlier deployed version of your application, you can update the active Launch Configuration in your Auto Scaling Group settings and replace your instances by terminating them in batches. Auto Scaling will start up new instances with your specified launch configuration in order to fulfill the desired instance count.
 
 
-## Win!
-
-Now that we have a completed playbook to handle deployments of our application to EC2 Auto Scaling, all that remains is to hook it up to your existing systems to invoke it whenever you want a new deploy to occur. We'll cover that in a later blog post.
-
-All the code from this article is available [on GitHub](https://github.com/atplanet/ansible-auto-scaling-tutorial).
+All the code and the readme has been sourced from [ansible-auto-scaling-tutorial.](https://github.com/atplanet/ansible-auto-scaling-tutorial).
